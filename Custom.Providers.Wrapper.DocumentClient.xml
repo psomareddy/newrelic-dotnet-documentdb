@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension xmlns="urn:newrelic-extension">
+	<instrumentation>
+		<tracerFactory>
+			<match assemblyName="Microsoft.Azure.DocumentDB.Core" className="Microsoft.Azure.Documents.Client.DocumentClient">
+				<exactMethodMatcher methodName="CreateAsync" />
+				<exactMethodMatcher methodName="UpdateAsync"/>
+				<exactMethodMatcher methodName="ReadAsync"/>
+				<exactMethodMatcher methodName="ReadFeedAsync"/>
+				<exactMethodMatcher methodName="DeleteAsync"/>
+				<exactMethodMatcher methodName="ExecuteProcedureAsync"/>
+				<exactMethodMatcher methodName="ExecuteQueryAsync"/>
+				<exactMethodMatcher methodName="UpsertAsync"/>
+			</match>
+		</tracerFactory>
+	</instrumentation>
+</extension>
